@@ -1,0 +1,33 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn-burgundy {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 15px 40px 12px;
+    font-size: 16px;
+    line-height: 1;
+    font-family: $font-soleil-book;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: $burgundy;
+    border: none;
+    border-radius: 0;
+    transition: .25s ease-in-out all;
+    
+    @include on-event {
+        color: #fff;
+        text-decoration: none;
+        background-color: $blue;    
+    }
+
+    @media (max-width: 575px) {
+        width: 100%;
+    }
+}

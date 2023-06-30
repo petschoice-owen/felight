@@ -1,0 +1,341 @@
+//main: ../main.scss
+
+/**
+ * Basic typography style for copy text
+ */
+ 
+body {
+    color: $text-color;
+    font: normal 125% / 1.2 $text-font-stack;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    text-transform: none;
+}
+
+h1 {
+    font-size: 44px;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+p, ul, ol, label, input, textarea {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul, ol {
+    padding-left: 40px;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+em, i {
+    font-style: italic;
+}
+
+a {
+    color: $text-color;
+
+    &:hover {
+        color: $blue;
+        text-decoration: none;
+    }
+
+    @include on-event() {
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 991px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    h6 {
+        font-size: 18px;
+    }
+
+    p, ul, ol, label, input, textarea {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    ul, ol {
+        padding-left: 30px;
+    }
+
+    p, ul, ol, label, input, textarea  {
+        font-size: 14px;
+    }
+}
+
+
+.line-white::after {
+    background-color: #fff;
+}
+.line-pink::after {
+    background-color: $pink;
+}
+.line-burgundy::after {
+    background-color: $burgundy;
+}
+.line-blue::after {
+    background-color: $blue;
+}
+.line-green::after {
+    background-color: $green;
+}
+.line-yellow::after {
+    background-color: $yellow;
+}
+
+.heading-white {
+    color: #fff;
+}
+.heading-pink {
+    color: $pink;
+}
+.heading-burgundy {
+    color: $burgundy;
+}
+.heading-blue {
+    color: $blue;
+}
+.heading-green {
+    color: $green;
+}
+.heading-yellow {
+    color: $yellow;
+}
+
+.heading-underlined {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 0 20px;
+    font-size: 42px;
+    line-height: 1;
+    font-family: $font-catalpa-extrabold;
+    text-align: center;
+    transform: rotate(-2deg);
+
+    &::after {
+        content: "";
+        position: relative;
+        z-index: 1;
+        width: calc(100% + 5px);
+        height: 8px;
+        transform: rotate(-4deg);
+        margin-top: -2px;
+        margin-bottom: 2px;
+    }
+
+    span {
+        position: relative;
+        z-index: 2;
+    }
+
+    @media (max-width: 1199px) {
+        font-size: 38px;
+    }
+
+    @media (max-width: 991px) {
+        font-size: 35px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 28px;
+    }
+}
+
+.heading-underlined-big {
+    padding: 15px 0 25px;
+    font-size: 50px;
+
+    &::after {
+        height: 12px;
+        margin-top: -6px;
+        margin-bottom: 6px;
+    }
+
+    @media (max-width: 1199px) {
+        font-size: 45px;
+    }
+
+    @media (max-width: 991px) {
+        font-size: 40px;
+
+        &::after {
+            height: 10px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        font-size: 30px;
+
+        &::after {
+            height: 8px;
+            margin-top: -2px;
+            margin-bottom: 2px;
+        }
+    }
+}
+
+.heading-underlined-bigger {
+    padding: 15px 0 25px;
+    font-size: 60px;
+
+    &::after {
+        height: 12px;
+        margin-top: -2px;
+        margin-bottom: 2px;
+    }
+
+    @media (max-width: 1199px) {
+        font-size: 50px;
+    }
+
+    @media (max-width: 991px) {
+        font-size: 45px;
+
+        &::after {
+            height: 10px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        font-size: 34px;
+    }
+}
+
+.heading-whisker {
+    span {
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            margin: auto;
+            width: 35px;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        &::before {
+            right: calc(100% + 10px);
+            top: 0;
+        }
+
+        &::after {
+            left: calc(100% + 12px);
+            top: 5px;
+        }
+
+        @media (max-width: 767px) {
+            &::before {
+                right: calc(100% + 5px);
+            }
+    
+            &::after {
+                left: calc(100% + 6px);
+            }
+        }
+    }
+
+    &-burgundy {
+        span {
+            &::before {
+                background-image: url(../assets/images/whiskers-left-burgundy.png);
+            }
+            &::after {
+                background-image: url(../assets/images/whiskers-right-burgundy.png);
+            }
+        }
+    }
+
+    &-pink {
+        span {
+            &::before {
+                background-image: url(../assets/images/whiskers-left-pink.png);
+            }
+            &::after {
+                background-image: url(../assets/images/whiskers-right-pink.png);
+            }
+        }
+    }
+}
