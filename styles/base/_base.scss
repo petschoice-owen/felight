@@ -241,8 +241,8 @@ main {
 }
 
 
-// br height
-br {
+// br or white space height
+br, p:empty {
     display: block;
     content: "";
     margin-top: 15px;

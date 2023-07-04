@@ -423,3 +423,21 @@
         }
     }
 }
+
+.admin-bar {
+    .top-navigation {
+        top: 32px;
+    }
+
+    @media (max-width: 782px) {
+        .top-navigation {
+            top: 46px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .top-navigation.scrolled {
+            top: 0;   
+        }
+    }
+}
