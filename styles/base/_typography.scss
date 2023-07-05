@@ -338,4 +338,37 @@ a {
             }
         }
     }
+
+    &-blue {
+        span {
+            &::before {
+                background-image: url(../assets/images/whiskers-left-blue.png);
+            }
+            &::after {
+                background-image: url(../assets/images/whiskers-right-blue.png);
+            }
+        }
+    }
+
+    &-green {
+        span {
+            &::before {
+                background-image: url(../assets/images/whiskers-left-green.png);
+            }
+            &::after {
+                background-image: url(../assets/images/whiskers-right-green.png);
+            }
+        }
+    }
+
+    &-yellow {
+        span {
+            &::before {
+                background-image: url(../assets/images/whiskers-left-yellow.png);
+            }
+            &::after {
+                background-image: url(../assets/images/whiskers-right-yellow.png);
+            }
+        }
+    }
 }
