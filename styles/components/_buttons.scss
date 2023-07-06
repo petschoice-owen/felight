@@ -21,7 +21,7 @@
     border-radius: 0;
     transition: .25s ease-in-out all;
     
-    @include on-event {
+    &:hover {
         color: #fff;
         text-decoration: none;
         background-color: $blue;    

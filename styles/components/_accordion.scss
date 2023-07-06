@@ -23,6 +23,58 @@
             }
         }
 
+        &.background {
+            &-pink {
+                &:first-child::before {
+                    border-color: $pink;
+                }
+
+                button.accordion-button:not(.collapsed) {
+                    background-color: $pink;
+                }
+            }
+
+            &-burgundy {
+                &:first-child::before {
+                    border-color: $burgundy;
+                }
+
+                button.accordion-button:not(.collapsed) {
+                    background-color: $burgundy;
+                }
+            }
+
+            &-blue {
+                &:first-child::before {
+                    border-color: $blue;
+                }
+                
+                button.accordion-button:not(.collapsed) {
+                    background-color: $blue;
+                }
+            }
+
+            &-green {
+                &:first-child::before {
+                    border-color: $green;
+                }
+                
+                button.accordion-button:not(.collapsed) {
+                    background-color: $green;
+                }
+            }
+
+            &-yellow {
+                &:first-child::before {
+                    border-color: $yellow;
+                }
+                
+                button.accordion-button:not(.collapsed) {
+                    background-color: $yellow;
+                }
+            }
+        }
+
         button.accordion-button {
             padding: 15px;
             font-family: $font-catalpa-extrabold;
@@ -54,17 +106,39 @@
         .accordion-collapse {
             color: #fff;
             background-color: $burgundy;
+
+            &.background {
+                &-pink {
+                    background-color: $pink;
+                }
+
+                &-burgundy {
+                    background-color: $burgundy;
+                }
+
+                &-blue {
+                    background-color: $blue;
+                }
+
+                &-green {
+                    background-color: $green;
+                }
+
+                &-yellow {
+                    background-color: $yellow;
+                }
+            }
         }
 
         .accordion-body {
             padding: 15px;
 
-            // p {
-            //     font-size: 16px;
-            // }
-
             ul {
                 padding-left: 30px;
+            }
+
+            li + li {
+                margin-top: 3px;
             }
         }
     }

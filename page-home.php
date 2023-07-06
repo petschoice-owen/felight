@@ -108,252 +108,131 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-        <section class="about" id="about">
-            <img src="assets/images/image-cat-paw.png" class="image-paw" data-cue="fadeInDown" data-duration="1000" data-delay="800" alt="cat paw" />
+        <section class="about background-<?php the_field('about_background_color_left'); ?>" 
+            id="<?php if( have_rows('about_section_id') ): 
+                while( have_rows('about_section_id') ): the_row(); 
+                    the_sub_field('section_id'); 
+                endwhile;
+            endif; ?>">
+            <?php if( get_field('about_top_image_background') ): ?>
+                <img src="<?php the_field('about_top_image_background'); ?>" class="image-paw" data-cue="fadeInDown" data-duration="1000" data-delay="800" alt="cat paw" />
+            <?php endif; ?>
             <div class="container">
                 <div class="wrapper">
                     <div class="section-text">
-                        <h2 class="heading-underlined line-blue" data-cue="fadeIn" data-duration="1000">
-                            <span class="heading-white">Lorem Ipsum</span>
-                            <span class="heading-pink">Dolor Sit Amet</span>
+                        <h2 class="heading-underlined line-<?php the_field('about_heading_underline_color'); ?>" data-cue="fadeIn" data-duration="1000">
+                            <?php if( have_rows('about_section_heading') ): ?>
+                                <?php while( have_rows('about_section_heading') ): the_row(); ?>
+                                    <span class="heading-<?php the_sub_field('heading_color'); ?>"><?php the_sub_field('heading'); ?></span>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
                         </h2>
-                        <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
+                        <?php if( get_field('about_section_subheading') ): ?>
+                            <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200"><?php the_field('about_section_subheading'); ?></p>
+                        <?php endif; ?>
                     </div>
-                    <div class="section-image">
-                        <span class="background-color background-pink"></span>
-                        <img src="assets/images/image-cat-litter-pink.png" data-cue="fadeIn" data-duration="1000" data-delay="600" alt="cat litter" />
-                    </div>
+                    <?php if( get_field('about_section_image') ): ?>
+                        <div class="section-image">
+                            <span class="background-color background-<?php the_field('about_background_color_right'); ?>"></span>
+                            <img src="<?php the_field('about_section_image'); ?>" data-cue="fadeIn" data-duration="1000" data-delay="600" alt="cat litter" />
+                        </div>
+                    <?php endif; ?>                    
                 </div>
             </div>
         </section>
-        <section class="faqs background-blue" id="faqs">
+        <section class="faqs background-<?php the_field('faqs_background_color'); ?>" 
+            id="<?php if( have_rows('faqs_section_id') ): 
+                while( have_rows('faqs_section_id') ): the_row(); 
+                    the_sub_field('section_id'); 
+                endwhile;
+            endif; ?>">
             <div class="container">
-                <img src="assets/images/image-cat-castle.png" class="image-castle" data-cue="fadeIn" data-duration="1000" data-delay="400" alt="" />
+                <?php if( get_field('faqs_section_image') ): ?>
+                    <img src="<?php the_field('faqs_section_image'); ?>" class="image-castle" data-cue="fadeIn" data-duration="1000" data-delay="400" alt="faqs image" />
+                <?php endif; ?>
                 <div class="wrapper">
                     <div class="section-text">
-                        <h2 class="heading-underlined line-pink" data-cue="fadeIn" data-duration="1000">
-                            <span class="heading-white">Lorem Ipsum</span>
-                            <span class="heading-burgundy">Dolor Sit Amet</span>
+                        <h2 class="heading-underlined line-<?php the_field('faqs_heading_underline_color'); ?>" data-cue="fadeIn" data-duration="1000">
+                            <?php if( have_rows('faqs_section_heading') ): ?>
+                                <?php while( have_rows('faqs_section_heading') ): the_row(); ?>
+                                    <span class="heading-<?php the_sub_field('heading_color'); ?>"><?php the_sub_field('heading'); ?></span>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
                         </h2>
-                        <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
-                        </p>
+                        <?php if( get_field('faqs_section_subheading') ): ?>
+                            <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200"><?php the_field('faqs_section_subheading'); ?></p>
+                        <?php endif; ?>
                     </div>
                     <div class="accordion" id="accordion_faq" data-cues="fadeIn" data-duration="1000" data-delay="200">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="accordion_heading_1">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion_collapse_1" aria-expanded="true" aria-controls="accordion_collapse_1">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit?
-                            </button>
-                            </h2>
-                            <div id="accordion_collapse_1" class="accordion-collapse collapse show" aria-labelledby="accordion_heading_1" data-bs-parent="#accordion_faq">
-                                <div class="accordion-body">
-                                    <p>B-Calm is available in a standard 100ml bottle, or a smaller more convenient 30ml travel-size option. This is ideal if travelling with your dog, as journeys in the car can often be stressful experiences for them.</p>
+                        <?php if( have_rows('faqs_items') ): ?>
+                            <?php $counter = 1; ?>
+                            <?php while( have_rows('faqs_items') ): the_row(); ?>
+                                <div class="accordion-item background-<?php the_sub_field('heading_background_color'); ?>">
+                                    <h2 class="accordion-header" id="accordion_heading_<?php echo $counter; ?>">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion_collapse_<?php echo $counter; ?>" aria-expanded="false" aria-controls="accordion_collapse_<?php echo $counter; ?>"><?php the_sub_field('heading'); ?></button>
+                                    </h2>
+                                    <div id="accordion_collapse_<?php echo $counter; ?>" class="accordion-collapse collapse background-<?php the_sub_field('content_background_color'); ?>" aria-labelledby="accordion_heading_<?php echo $counter; ?>" data-bs-parent="#accordion_faq">
+                                        <div class="accordion-body"><?php the_sub_field('content'); ?></div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="accordion_heading_2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion_collapse_2" aria-expanded="false" aria-controls="accordion_collapse_2">
-                                Lorem ipsum dolor sit amet consectetur?
-                            </button>
-                            </h2>
-                            <div id="accordion_collapse_2" class="accordion-collapse collapse" aria-labelledby="accordion_heading_2" data-bs-parent="#accordion_faq">
-                                <div class="accordion-body">
-                                    <p>Several factors cause stress and anxiety for our pets, including boredom, frustration, fear or even simple changes in routine. Other seasonal factors (i.e. bonfire night, new year's eve, etc.) are known contributors to stress and anxiety.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="accordion_heading_3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion_collapse_3" aria-expanded="false" aria-controls="accordion_collapse_3">
-                                Lorem ipsum dolor sit?
-                            </button>
-                            </h2>
-                            <div id="accordion_collapse_3" class="accordion-collapse collapse" aria-labelledby="accordion_heading_3" data-bs-parent="#accordion_faq">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li>Loss of appetite</li>
-                                        <li>Excessive scratching or chewing</li>
-                                        <li>Pacing, circling or restlessness</li>
-                                        <li>Becoming more withdrawn or hiding</li>
-                                        <li>Becoming more aggressive or less tolerant</li>
-                                        <li>Reluctant of using the litter tray</li>
-                                        <li>Sleep disturbance</li>
-                                        <li>Over-grooming</li>
-                                        <li>Overeating</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="accordion_heading_4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion_collapse_4" aria-expanded="false" aria-controls="accordion_collapse_4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do?
-                            </button>
-                            </h2>
-                            <div id="accordion_collapse_4" class="accordion-collapse collapse" aria-labelledby="accordion_heading_4" data-bs-parent="#accordion_faq">
-                                <div class="accordion-body">
-                                    <p>B-Calm is available in a standard 100ml bottle, or a smaller more convenient 30ml travel-size option. This is ideal if travelling with your dog, as journeys in the car can often be stressful experiences for them.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="accordion_heading_5">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion_collapse_5" aria-expanded="false" aria-controls="accordion_collapse_5">
-                                Lorem ipsum dolor amet consectetur adipisicing?
-                            </button>
-                            </h2>
-                            <div id="accordion_collapse_5" class="accordion-collapse collapse" aria-labelledby="accordion_heading_5" data-bs-parent="#accordion_faq">
-                                <div class="accordion-body">
-                                    <p>B-Calm is available in a standard 100ml bottle, or a smaller more convenient 30ml travel-size option. This is ideal if travelling with your dog, as journeys in the car can often be stressful experiences for them.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="accordion_heading_6">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion_collapse_6" aria-expanded="false" aria-controls="accordion_collapse_6">
-                                Lorem ipsum dolor sit amet elit?
-                            </button>
-                            </h2>
-                            <div id="accordion_collapse_6" class="accordion-collapse collapse" aria-labelledby="accordion_heading_6" data-bs-parent="#accordion_faq">
-                                <div class="accordion-body">
-                                    <p>B-Calm is available in a standard 100ml bottle, or a smaller more convenient 30ml travel-size option. This is ideal if travelling with your dog, as journeys in the car can often be stressful experiences for them.</p>
-                                </div>
-                            </div>
-                        </div>
+                            <?php $counter++; ?>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="contact background-pink" id="contact">
-            <img src="assets/images/image-contact-left.png" class="image-contact image-left" data-cue="fadeInLeft" data-duration="1000" data-delay="800" alt="product image" />
-            <img src="assets/images/image-contact-right.png" class="image-contact image-right" data-cue="fadeInRight" data-duration="1000" data-delay="800" alt="product image" />
+        <section class="contact background-<?php the_field('contact_background_color'); ?>" 
+            id="<?php if( have_rows('contact_section_id') ): 
+                while( have_rows('contact_section_id') ): the_row(); 
+                    the_sub_field('section_id'); 
+                endwhile;
+            endif; ?>">
+            <?php if( get_field('contact_image_left') ): ?>
+                <img src="<?php the_field('contact_image_left'); ?>" class="image-contact image-left" data-cue="fadeInLeft" data-duration="1000" data-delay="800" alt="product image" />
+            <?php endif; ?>
+            <?php if( get_field('contact_image_right') ): ?>
+                <img src="<?php the_field('contact_image_right'); ?>" class="image-contact image-right" data-cue="fadeInRight" data-duration="1000" data-delay="800" alt="product image" />
+            <?php endif; ?>
             <div class="container">
                 <div class="wrapper">
                     <div class="section-text" data-cue="fadeIn" data-duration="1000">
-                        <h2 class="heading-underlined line-blue">
-                            <span class="heading-white">Lorem Ipsum</span>
-                            <span class="heading-burgundy">Dolor Sit Amet</span>
+                        <h2 class="heading-underlined line-<?php the_field('contact_heading_underline_color'); ?>">
+                            <?php if( have_rows('contact_section_heading') ): ?>
+                                <?php while( have_rows('contact_section_heading') ): the_row(); ?>
+                                    <span class="heading-<?php the_sub_field('heading_color'); ?>"><?php the_sub_field('heading'); ?></span>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
                         </h2>
                     </div>
                     <div class="columns">
                         <div class="column column-info">
-                            <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            </p>
+                            <?php if( get_field('contact_section_subheading') ): ?>
+                                <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200"><?php the_field('contact_section_subheading'); ?></p>
+                            <?php endif; ?>
                             <div class="contact-details">
-                                <div class="detail detail-full" data-cue="fadeIn" data-duration="1000" data-delay="400">
-                                    <img src="assets/images/icon-pin-burgundy.png" class="icon" alt="location" >
-                                    <a href="#" class="address not-clickable">Pets Choice Ltd, Brentwood House Lower Philips Road, Whitebirk Industrial Estate, Blackburn, BB1 5UD, UK.</a>
-                                </div>
-                                <div class="detail detail-half" data-cue="fadeIn" data-duration="1000" data-delay="600">
-                                    <img src="assets/images/icon-telephone-burgundy.png" class="icon" alt="telephone" >
-                                    <a href="#" class="telephone clickable">01254 54545</a>
-                                </div>
-                                <div class="detail detail-half" data-cue="fadeIn" data-duration="1000" data-delay="800">
-                                    <img src="assets/images/icon-mail-burgundy.png" class="icon" alt="email address" >
-                                    <a href="#" class="email clickable">info@petschoice.co.uk</a>
-                                </div>
+                                <?php if( get_field('contact_detail_address') ): ?>
+                                    <div class="detail detail-full" data-cue="fadeIn" data-duration="1000" data-delay="400">
+                                        <img src="<?php the_field('contact_detail_address_icon'); ?>" class="icon" alt="location" >
+                                        <a href="#" class="address not-clickable"><?php the_field('contact_detail_address'); ?></a>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if( get_field('contact_detail_telephone') ): ?>
+                                    <div class="detail detail-half" data-cue="fadeIn" data-duration="1000" data-delay="600">
+                                        <img src="<?php the_field('contact_detail_telephone_icon'); ?>" class="icon" alt="telephone" >
+                                        <a href="#" class="telephone clickable"><?php the_field('contact_detail_telephone'); ?></a>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if( get_field('contact_detail_email') ): ?>
+                                    <div class="detail detail-half" data-cue="fadeIn" data-duration="1000" data-delay="800">
+                                        <img src="<?php the_field('contact_detail_email_icon'); ?>" class="icon" alt="email address" >
+                                        <a href="#" class="email clickable"><?php the_field('contact_detail_email'); ?></a>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="column column-contact contact-form" data-cue="fadeIn" data-duration="1000" data-delay="1000">
-                            <div class="wpcf7 js" id="wpcf7-felight" lang="en-US" dir="ltr">
-                                <form action="" method="post" class="wpcf7-form" aria-label="Contact form">
-                                    <div class="form-items">
-                                        <div class="form-item item-input item-input-row">
-                                            <div class="item-input-column">
-                                                <p>
-                                                    <span class="wpcf7-form-control-wrap">
-                                                        <input size="40" class="wpcf7-form-control wpcf7-text cf-input" id="firstname" placeholder="First Name*" type="text">
-                                                    </span>
-                                                </p>
-                                            </div>
-                                            <div class="item-input-column">
-                                                <p>
-                                                    <span class="wpcf7-form-control-wrap">
-                                                        <input size="40" class="wpcf7-form-control wpcf7-text cf-input" id="lastname" placeholder="Last Name*" type="text">
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-item item-input item-input-row">
-                                            <div class="item-input-column">
-                                                <p>
-                                                    <span class="wpcf7-form-control-wrap">
-                                                        <input size="40" class="wpcf7-form-control wpcf7-text cf-input" id="emailaddress" placeholder="Email Address*" type="email">
-                                                    </span>
-                                                </p>
-                                            </div>
-                                            <div class="item-input-column">
-                                                <p>
-                                                    <span class="wpcf7-form-control-wrap">
-                                                        <input size="40" class="wpcf7-form-control wpcf7-text cf-input" id="phonenumber" placeholder="Phone Number" type="text">
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-item item-input item-input-row">
-                                            <div class="item-input-column">
-                                                <p>
-                                                    <span class="wpcf7-form-control-wrap">
-                                                        <input size="40" class="wpcf7-form-control wpcf7-text cf-input" id="street" placeholder="Street" type="text">
-                                                    </span>
-                                                </p>
-                                            </div>
-                                            <div class="item-input-column">
-                                                <p>
-                                                    <span class="wpcf7-form-control-wrap">
-                                                    <input size="40" class="wpcf7-form-control wpcf7-text cf-input" id="city/county" placeholder="City/County" type="text"></span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-item item-input item-input-row">
-                                            <div class="item-input-column">
-                                                <p>
-                                                    <span class="wpcf7-form-control-wrap">
-                                                        <input size="40" class="wpcf7-form-control wpcf7-text cf-input" id="postcode" placeholder="Post Code" type="text"></span>
-                                                    </p>
-                                            </div>
-                                            <div class="item-input-column">
-                                                <div class="field-select">
-                                                    <p>
-                                                        <span class="wpcf7-form-control-wrap">
-                                                            <select class="wpcf7-form-control wpcf7-select cf-select" id="social">
-                                                                <option value="Subject">Subject</option>
-                                                                <option value="General Enquiry">General Enquiry</option>
-                                                                <option value="Become a stockist">Become a stockist</option>
-                                                                <option value="Delivery/Order Enquiry">Delivery/Order Enquiry</option>
-                                                                <option value="Feedback">Feedback</option>
-                                                                <option value="Other">Other</option>
-                                                            </select>
-                                                        </span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-item item-input item-input-row">
-                                            <div class="item-input-column item-input-column-full">
-                                                <p>
-                                                    <span class="wpcf7-form-control-wrap">
-                                                        <textarea cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea cf-textarea" id="message" placeholder="Message*"></textarea>
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-item item-submit item-submit-purple button-right">
-                                            <div class="field-submit">
-                                                <p>
-                                                    <input class="wpcf7-form-control has-spinner wpcf7-submit cf-submit" id="submitform" type="submit" value="SUBMIT">
-                                                    <span class="wpcf7-spinner"></span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                            <?php echo do_shortcode(('[contact-form-7 id="'.get_field('contact_form_id').'"]')); ?>
                         </div>
                     </div>
                 </div>

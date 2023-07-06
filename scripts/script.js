@@ -43,7 +43,20 @@ var autoScrollSection = () => {
     }
 }
 
-// top navigation function
+// header menu links function - remove "/" if home page
+var headerHome = () => {
+    if ( $("body").hasClass("home") ) {
+        $(".top-navigation .navbar-nav li").each(function() {
+            var getHref = $(this).find("a")[0].getAttribute('href');
+            var removeSlash = getHref.replace('/','');
+
+            $(this).find('a').attr("href", removeSlash);
+        });
+    }
+}
+
+
+// window scroll function - top navigation
 var windowScrolled = () => {
     function checkScroll() {
         if ($(window).scrollTop() >= 50) {
@@ -229,7 +242,7 @@ var productListingActive = () => {
                 var activeSection = $(".product-listing-nav .section-active")[0].getAttribute('href');
                 var activeSectionText = activeSection.replace('#','');
 
-                console.log(activeSectionText);
+                // console.log(activeSectionText);
             
                 $(".product-listing").each(function() {
                     if ( $(this).attr('id') == activeSectionText ) {
@@ -263,6 +276,7 @@ var productTabs = () => {
 windowScrolled();
   
 $(document).ready(function() {
+    headerHome();
     swiperJs();
     autoScrollSection();
     categoryBoxes();
