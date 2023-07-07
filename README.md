@@ -10,7 +10,8 @@
 * Run localhost environment with `npm run dev`
 
 ## Project Name: Felight
-* [Home Page - Static](https://petschoice-owen.github.io/felight-static/index.html)
-* [Shop Page - Static](https://petschoice-owen.github.io/felight-static/shop.html)
-* [Product Page - Static](https://petschoice-owen.github.io/felight-static/product-page.html)
-* [Default Page - Static](https://petschoice-owen.github.io/felight-static/default.html)
+* [Home Page - Static](https://petschoice-owen.github.io/felight/index.html)
+* [Shop Page - Static](https://petschoice-owen.github.io/felight/shop.html)
+* [Product Page - Static](https://petschoice-owen.github.io/felight/product-page.html)
+* [Default Page - Static](https://petschoice-owen.github.io/felight/default.html)
+* [404 Page - Static](https://petschoice-owen.github.io/felight/404.html)

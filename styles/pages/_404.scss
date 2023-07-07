@@ -1,0 +1,135 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the 404 page.
+// -----------------------------------------------------------------------------
+
+.page-404 {
+    .banner-404 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 100px 0;
+        overflow: hidden;
+    }
+
+    .background-text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        font-family: $font-catalpa-extrabold;
+        line-height: 1;
+        font-size: 300px;
+        opacity: .1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .heading-404 {
+        position: relative;
+        z-index: 2;
+        margin-top: -10px;
+        line-height: 1;
+        font-size: 60px;
+
+        & + .subheading-404,
+        & + .content-404 {
+            margin-top: 15px;
+        }
+    }
+
+    .subheading-404 {
+        position: relative;
+        z-index: 2;
+        font-size: 36px;
+
+        & + .content-404 {
+            margin-top: 15px;
+        }
+    }
+
+    .content-404 {
+        position: relative;
+        z-index: 2;
+
+        * {
+            font-size: 20px;
+
+            a {
+                position: relative;
+                color: $blue;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    background-color: $blue;
+                    transition: .15s ease-in-out all;
+                }
+
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .container {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .banner-404 {
+            padding: 70px 0;
+        }
+        
+        .background-text {
+            font-size: 46vw;
+        }
+
+        .heading-404 {
+            font-size: 50px;
+        }
+
+        .subheading-404 {
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        .content-404 {
+            * {
+                line-height: 1.3;
+            }
+        }
+    }
+}

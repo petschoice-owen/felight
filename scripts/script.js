@@ -55,7 +55,6 @@ var headerHome = () => {
     }
 }
 
-
 // window scroll function - top navigation
 var windowScrolled = () => {
     function checkScroll() {
@@ -271,6 +270,31 @@ var productTabs = () => {
         }, 100);
     }
 }
+
+// center background text function - 404 page
+var text404 = () => {
+    if ( $(".page-404").length ) {
+        if ( $("body").hasClass("admin-bar") ) {
+            var headerHeight = $(".top-navigation").outerHeight();
+            var footerHeight = $(".footer-section").outerHeight();
+            var adminBarHeight = $("#wpadminbar").outerHeight();
+            var sumHeight = headerHeight + footerHeight + adminBarHeight;
+            var minHeight = 'calc(100vh - ' + sumHeight + 'px)';
+            $(".banner-404").css("min-height" , minHeight);
+        }
+        else {
+            var headerHeight = $(".top-navigation").outerHeight();
+            var footerHeight = $(".footer-section").outerHeight();
+            var sumHeight = headerHeight + footerHeight;
+            var minHeight = 'calc(100vh - ' + sumHeight + 'px)';
+
+            $(".banner-404").css("min-height" , minHeight);
+        }
+    }
+}
+
+
+
   
 // initialize the functions
 windowScrolled();
@@ -284,10 +308,12 @@ $(document).ready(function() {
     subscribeButton();
     scrollCue.init();
     secondaryTopNav();
+    text404();
 });
   
 $(window).resize(function() {
     categoryBoxes();
+    text404();
 });
   
 $(window).on('load', function() {
