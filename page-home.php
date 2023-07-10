@@ -74,8 +74,8 @@ get_header(); ?>
             </div>
         </section>
         <section class="features background-<?php the_field('features_bckground_color'); ?>" 
-            id="<?php if( have_rows('features_section_id_copy') ): 
-                while( have_rows('features_section_id_copy') ): the_row(); 
+            id="<?php if( have_rows('features_section_id') ): 
+                while( have_rows('features_section_id') ): the_row(); 
                     the_sub_field('section_id'); 
                 endwhile;
             endif; ?>">

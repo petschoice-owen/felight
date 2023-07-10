@@ -261,13 +261,24 @@ var productTabs = () => {
     }
 
     if ($(".product-tabs .nav-link").length) {
-        $(".product-tabs .nav-link:first-child").attr("aria-selected", "true").addClass("active");
+        setTimeout(() => {
+            $(".product-tabs .nav-link:first-child").attr("aria-selected", "true").addClass("active");
+        }, 100);
     }
 
     if ($(".product-tabs .tab-pane").length) {
         setTimeout(() => {
             $(".product-tabs .tab-pane:first-child").addClass("fade show active");
         }, 100);
+    }
+}
+
+// product instructions
+var productInstructions = () => {
+    if ( $('.usage-instructions .instructions .instruction').length ) {
+        var numberOfInstructions = $('.usage-instructions .instructions .instruction').length
+
+        $('.usage-instructions .instructions').addClass('instructions-'+numberOfInstructions);
     }
 }
 
@@ -292,8 +303,6 @@ var text404 = () => {
         }
     }
 }
-
-
 
   
 // initialize the functions
@@ -320,4 +329,5 @@ $(window).on('load', function() {
     scrollSpy();
     accordion();
     productTabs();
+    productInstructions();
 });

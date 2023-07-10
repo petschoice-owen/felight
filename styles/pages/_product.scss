@@ -5,10 +5,15 @@
 // -----------------------------------------------------------------------------
 
 .page-product {
+    main {
+        background-color: transparent;
+    }
+
     .product-section {
         position: relative;
         padding: 100px 0;
         overflow: hidden;
+        background-color: $pink;
 
         .product {
             position: relative;
@@ -43,6 +48,24 @@
                     background-color: $burgundy;
                     border: none;
                     border-radius: 50%;
+
+                    &.background {
+                        &-pink {
+                            background-color: $pink;
+                        }
+                        &-burgundy {
+                            background-color: $burgundy;
+                        }
+                        &-blue {
+                            background-color: $blue;
+                        }
+                        &-green {
+                            background-color: $green;
+                        }
+                        &-yellow {
+                            background-color: $yellow;
+                        }
+                    }
                 }
             }
         }
@@ -261,6 +284,12 @@
             display: flex;
             justify-content: center;
             margin-bottom: 40px;
+        }
+
+        .product-button {
+            a {
+                @extend .btn-burgundy;
+            }
         }
     }
 
