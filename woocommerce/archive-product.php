@@ -23,10 +23,10 @@ get_header( 'shop' ); ?>
     <?php include(get_template_directory() . '/top-navigation.php'); ?>
     <ul class="product-listing-nav d-none">
         <li>
-            <a href="<?php if( get_field('shop_banner_section_id', 'option') ) { the_field('shop_banner_section_id', 'option'); } else { echo "#banner"; } ?>">Banner</a>
-            <a href="<?php if( get_field('shop_litters_section_id', 'option') ) { the_field('shop_litters_section_id', 'option'); } else { echo "#litters"; } ?>">Litters</a>
-            <a href="<?php if( get_field('shop_accessories_section_id', 'option') ) { the_field('shop_accessories_section_id', 'option'); } else { echo "#accessories"; } ?>">Accessories</a>
-            <a href="<?php if( get_field('shop_fresheners_section_id', 'option') ) { the_field('shop_fresheners_section_id', 'option'); } else { echo "#fresheners"; } ?>">Fresheners</a>
+            <a href="#<?php if( get_field('shop_banner_section_id', 'option') ) { the_field('shop_banner_section_id', 'option'); } else { echo "banner"; } ?>">Banner</a>
+            <a href="#<?php if( get_field('shop_litters_section_id', 'option') ) { the_field('shop_litters_section_id', 'option'); } else { echo "litters"; } ?>">Litters</a>
+            <a href="#<?php if( get_field('shop_accessories_section_id', 'option') ) { the_field('shop_accessories_section_id', 'option'); } else { echo "accessories"; } ?>">Accessories</a>
+            <a href="#<?php if( get_field('shop_fresheners_section_id', 'option') ) { the_field('shop_fresheners_section_id', 'option'); } else { echo "fresheners"; } ?>">Fresheners</a>
         </li>
     </ul>
     <main class="page-shop">

@@ -7,7 +7,7 @@ get_header(); ?>
 <body <?php body_class(); ?>>
     <?php include 'top-navigation.php'; ?>
 	<main class="page-404">
-		<section class="banner-404 background-<?php the_field('404_background_color', 'option'); ?>">
+		<section class="banner-404 banner-section background-<?php the_field('404_background_color', 'option'); ?>">
 			<div class="container">
 				<div class="wrapper">
 					<?php if( get_field('404_background_text', 'option') ): ?>

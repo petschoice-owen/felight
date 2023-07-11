@@ -84,6 +84,12 @@ var searchBar = () => {
         $(".top-navigation .account .search").click(function(e) {
             e.preventDefault();
             $(".top-navigation .search-section").toggleClass("show");
+
+            if ( !$(".top-navigation .search-section").hasClass('show') ) {
+                setTimeout(() => {
+                    $(".top-navigation .search-section .search-field").val('');
+                }, 500);
+            }
         });
     }
 }
@@ -283,15 +289,15 @@ var productInstructions = () => {
 }
 
 // center background text function - 404 page
-var text404 = () => {
-    if ( $(".page-404").length ) {
+var fullHeightWindow = () => {
+    if ( $(".page-404, .page-search").length ) {
         if ( $("body").hasClass("admin-bar") ) {
             var headerHeight = $(".top-navigation").outerHeight();
             var footerHeight = $(".footer-section").outerHeight();
             var adminBarHeight = $("#wpadminbar").outerHeight();
             var sumHeight = headerHeight + footerHeight + adminBarHeight;
             var minHeight = 'calc(100vh - ' + sumHeight + 'px)';
-            $(".banner-404").css("min-height" , minHeight);
+            $(".banner-section").css("min-height" , minHeight);
         }
         else {
             var headerHeight = $(".top-navigation").outerHeight();
@@ -317,12 +323,12 @@ $(document).ready(function() {
     subscribeButton();
     scrollCue.init();
     secondaryTopNav();
-    text404();
+    fullHeightWindow();
 });
   
 $(window).resize(function() {
     categoryBoxes();
-    text404();
+    fullHeightWindow();
 });
   
 $(window).on('load', function() {

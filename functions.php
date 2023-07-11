@@ -182,3 +182,44 @@ add_action('acf/input/admin_footer', 'PREFIX_apply_acf_modifications');
 /*-----------------------------------------------------------------------------------*/
 add_theme_support( 'woocommerce' );
 
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Search function - Search titles only 
+/*-----------------------------------------------------------------------------------*/
+function __search_by_title_only( $search, $wp_query )
+{
+    global $wpdb;
+    if(empty($search)) {
+        return $search; // skip processing - no search term in query
+    }
+    $q = $wp_query->query_vars;
+    $n = !empty($q['exact']) ? '' : '%';
+    $search =
+    $searchand = '';
+    foreach ((array)$q['search_terms'] as $term) {
+        $term = esc_sql($wpdb->esc_like($term));
+        $search .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
+        $searchand = ' AND ';
+    }
+    if (!empty($search)) {
+        $search = " AND ({$search}) ";
+        if (!is_user_logged_in())
+            $search .= " AND ($wpdb->posts.post_password = '') ";
+    }
+    return $search;
+}
+add_filter('posts_search', '__search_by_title_only', 500, 2);
+
+
+
+// /*-----------------------------------------------------------------------------------*/
+// /* Search Results Page - Change default URL from "/?s=search-term" to "/search" 
+// /*-----------------------------------------------------------------------------------*/
+// function change_search_url() {
+//     if ( is_search() && ! empty( $_GET['s'] ) ) {
+//         wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+//         exit();
+//     }
+// }
+// add_action( 'template_redirect', 'change_search_url' );

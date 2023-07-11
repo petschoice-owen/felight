@@ -132,12 +132,7 @@
             </nav>
         </div>
         <div class="search-section">
-            <form action="/" method="get">
-                <label>
-                    <input type="search" class="search-field" placeholder="Search for a product..." value="" name="s" />
-                </label>
-                <input type="submit" class="search-submit" value="Search" />
-            </form>
+            <?php get_search_form(); ?>
         </div>
     </div>
     <?php if( get_field('theme_newsletter_icon', 'option') ): ?>
