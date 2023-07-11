@@ -28,8 +28,27 @@
 
         .section-text {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             margin-bottom: 40px;
+
+            p {
+                max-width: 70%;
+                margin-top: 20px;
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+
+        .product-button {
+            a {
+                @extend .btn-burgundy;
+            }
+        }
+
+        .no-products {
+            text-align: center;
         }
     }
 
@@ -100,6 +119,15 @@
     }
 
     @media (max-width: 767px) {
+        .product-listing {
+            .section-text p {
+                max-width: calc(100% - 30px);
+                margin-top: 10px;
+                font-size: 18px;    
+                line-height: 1.3;
+            }
+        }
+
         .product-listing-litters {
             .image-left {
                 min-width: 120px;

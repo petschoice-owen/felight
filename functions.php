@@ -118,26 +118,27 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_slug' 	=> 'general-settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
-	));
-	
+	));	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Theme Header',
 		'menu_title'	=> 'Header Section',
 		'parent_slug'	=> 'general-settings',
-	));
-	
+	));	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Theme Footer',
 		'menu_title'	=> 'Footer Section',
 		'parent_slug'	=> 'general-settings',
-	));
-	
+	));	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Social Media',
 		'menu_title'	=> 'Social Media',
 		'parent_slug'	=> 'general-settings',
-	));
-	
+	));	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Shop Page',
+		'menu_title'	=> 'Shop Page',
+		'parent_slug'	=> 'general-settings',
+	));	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> '404 Page',
 		'menu_title'	=> '404 Page',
