@@ -305,7 +305,26 @@ var fullHeightWindow = () => {
             var sumHeight = headerHeight + footerHeight;
             var minHeight = 'calc(100vh - ' + sumHeight + 'px)';
 
-            $(".banner-404").css("min-height" , minHeight);
+            $(".banner-section").css("min-height" , minHeight);
+        }
+    }
+
+    if ( $(".page-default").length ) {
+        if ( $("body").hasClass("admin-bar") ) {
+            var headerHeight = $(".top-navigation").outerHeight();
+            var footerHeight = $(".footer-section").outerHeight();
+            var adminBarHeight = $("#wpadminbar").outerHeight();
+            var sumHeight = headerHeight + footerHeight + adminBarHeight;
+            var minHeight = 'calc(100vh - ' + sumHeight + 'px)';
+            $("section.default").css("min-height" , minHeight);
+        }
+        else {
+            var headerHeight = $(".top-navigation").outerHeight();
+            var footerHeight = $(".footer-section").outerHeight();
+            var sumHeight = headerHeight + footerHeight;
+            var minHeight = 'calc(100vh - ' + sumHeight + 'px)';
+
+            $("section.default").css("min-height" , minHeight);
         }
     }
 }

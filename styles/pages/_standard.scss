@@ -1,11 +1,11 @@
 //main: ../main.scss
 
 // -----------------------------------------------------------------------------
-// This file contains styles that are specific to the default page.
+// This file contains styles that are specific to the standard page.
 // -----------------------------------------------------------------------------
 
-.page-default {
-    .default {
+.page-standard {
+    .standard-section {
         padding: 100px 0;
 
         .container {
@@ -113,7 +113,7 @@
     }
 
     @media (max-width: 1199px) {
-        .default {
+        .standard-section {
             .container {
                 max-width: 85%;
             }
@@ -121,7 +121,7 @@
     }
 
     @media (max-width: 991px) {
-        .default {
+        .standard-section {
             padding: 80px 0;
 
             .container {
@@ -135,7 +135,7 @@
     }
 
     @media (max-width: 767px) {
-        .default {
+        .standard-section {
             padding: 50px 0;
 
             .container {

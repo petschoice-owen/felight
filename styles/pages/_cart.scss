@@ -1,0 +1,33 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the cart page.
+// -----------------------------------------------------------------------------
+
+.woocommerce-cart {
+    .woocommerce {
+        flex-direction: column;
+
+        .woocommerce-info {
+            margin-bottom: 20px;
+            border-color: $blue;
+
+            &::before {
+                color: $blue;
+            }
+        }
+
+        .return-to-shop {
+            .button {
+                @extend .btn-burgundy;
+                padding: 15px 20px 12px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .default .container {
+            padding: 0 20px;
+        }
+    }
+}

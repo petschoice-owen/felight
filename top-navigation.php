@@ -135,9 +135,9 @@
             <?php get_search_form(); ?>
         </div>
     </div>
-    <?php if( get_field('theme_newsletter_icon', 'option') ): ?>
+    <?php if( (get_field('header_newsletter_visibility', 'option') == 'show') && (get_field('theme_newsletter_icon', 'option') ) ) { ?>
         <a href="#" class="floating-subscribe animate__animated animate__rubberBand">
             <img src="<?php the_field('theme_newsletter_icon', 'option'); ?>" alt="floating subscribe" />
         </a>
-    <?php endif; ?>
-    <div class="klaviyo-newsletter"></div>
+        <div class="klaviyo-newsletter"></div>
+    <?php } ?>

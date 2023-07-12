@@ -43,9 +43,13 @@
 
 // 6. Page-specific styles
 @import
+    'pages/default',
+    'pages/standard',
     'pages/home',
     'pages/shop',
     'pages/product',
     'pages/default',
     'pages/404',
-    'pages/search';
+    'pages/search',
+    'pages/woocommerce',
+    'pages/cart';

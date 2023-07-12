@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Default Page
+ *
  *
  */
  
@@ -9,8 +9,8 @@ get_header(); ?>
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php include 'top-navigation.php'; ?>
-			<main class="page-default page-default-1"> <!-- data-bs-spy="scroll" data-bs-target="#navbar_main" data-bs-offset="0" tabindex="0" -->
-				<section class="default background-color background-pink">
+			<main class="page-standard"> <!-- data-bs-spy="scroll" data-bs-target="#navbar_main" data-bs-offset="0" tabindex="0" -->
+				<section class="standard-section background-color background-pink">
 					<div class="container">
 						<?php if( have_rows('section_heading') ): ?>
 							<div class="section-text">

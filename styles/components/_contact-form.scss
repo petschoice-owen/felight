@@ -166,3 +166,20 @@
         }
     }
 }
+
+.select2-container {
+    .select2-dropdown {
+        background-color: $pink;
+        border-color: $burgundy;
+        border-radius: 0;
+
+        .select2-search__field {
+            color: $burgundy;
+            border-color: $burgundy;
+        }
+
+        .select2-results__option--highlighted {
+            background-color: $blue;
+        }
+    }
+}
