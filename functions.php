@@ -223,3 +223,4 @@ add_filter('posts_search', '__search_by_title_only', 500, 2);
 //     }
 // }
 // add_action( 'template_redirect', 'change_search_url' );
+

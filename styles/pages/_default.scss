@@ -9,7 +9,8 @@
         padding: 100px 0;
 
         .container {
-            max-width: 80%;
+            // max-width: 80%;
+            max-width: 1000px;
         }
 
         .section-text {
@@ -67,6 +68,10 @@
             // }
         }
 
+        p + ul {
+            margin-top: 5px;
+        }
+
         p, li {
             font-size: 18px;
             line-height: 1.4;
@@ -78,6 +83,10 @@
 
         h1, h2, h3, h4, h5, h6 {
             font-family: $font-catalpa-extrabold;
+
+            & + ul {
+                padding-top: 10px;
+            }
         }
 
         a {

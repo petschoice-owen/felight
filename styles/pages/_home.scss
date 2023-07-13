@@ -288,6 +288,18 @@
         .contact-form {
             margin-top: -8px;
         }
+
+        form {
+            position: relative;
+        }
+
+        .wpcf7-response-output {
+            position: absolute;
+            top: 100%;
+            width: calc(100% - 20px);
+            margin: 0 10px;
+            font-size: 14px;
+        }
     }
 
     @media (min-width: 1400px) and (max-width: 1599px) {
@@ -528,6 +540,17 @@
                 input:not([type="submit"]), select, textarea {
                     background-color: $pink;
                 }
+
+                &.invalid .wpcf7-response-output,
+                &.unaccepted .wpcf7-response-output,
+                &.payment-required .wpcf7-response-output {
+                    background-color: $yellow;
+                }
+
+                &.failed .wpcf7-response-output,
+                &.aborted .wpcf7-response-output {
+                    background-color: #c30010;
+                }
             }
         }
     }
@@ -661,6 +684,14 @@
             .contact-details {
                 .detail {
                     padding-left: 35px;
+                }
+            }
+
+            form {
+                .wpcf7-response-output {
+                    position: relative;
+                    top: initial;
+                    margin-top: -25px;
                 }
             }
         }

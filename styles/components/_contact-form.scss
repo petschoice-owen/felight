@@ -167,6 +167,19 @@
     }
 }
 
+.wpcf7 form {
+    &.failed .wpcf7-response-output,
+    &.aborted .wpcf7-response-output {
+        border-color: #c30010;
+    }
+
+    &.invalid .wpcf7-response-output,
+    &.unaccepted .wpcf7-response-output,
+    &.payment-required .wpcf7-response-output {
+        border-color: $yellow;
+    }
+}
+
 .select2-container {
     .select2-dropdown {
         background-color: $pink;
