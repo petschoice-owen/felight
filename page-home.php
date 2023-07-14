@@ -211,22 +211,22 @@ get_header(); ?>
                                 <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200"><?php the_field('contact_section_subheading'); ?></p>
                             <?php endif; ?>
                             <div class="contact-details">
-                                <?php if( get_field('contact_detail_address') ): ?>
+                                <?php if( get_field('contact_address') ): ?>
                                     <div class="detail detail-full" data-cue="fadeIn" data-duration="1000" data-delay="400">
-                                        <img src="<?php the_field('contact_detail_address_icon'); ?>" class="icon" alt="location" >
-                                        <a href="#" class="address not-clickable"><?php the_field('contact_detail_address'); ?></a>
+                                        <img src="<?php the_field('contact_address_icon'); ?>" class="icon" alt="location" >
+                                        <a href="#" class="address not-clickable"><?php the_field('contact_address'); ?></a>
                                     </div>
                                 <?php endif; ?>
-                                <?php if( get_field('contact_detail_telephone') ): ?>
+                                <?php if( get_field('contact_telephone') ): ?>
                                     <div class="detail detail-half" data-cue="fadeIn" data-duration="1000" data-delay="600">
-                                        <img src="<?php the_field('contact_detail_telephone_icon'); ?>" class="icon" alt="telephone" >
-                                        <a href="#" class="telephone clickable"><?php the_field('contact_detail_telephone'); ?></a>
+                                        <img src="<?php the_field('contact_telephone_icon'); ?>" class="icon" alt="telephone" >
+                                        <a href="#" class="telephone clickable"><?php the_field('contact_telephone'); ?></a>
                                     </div>
                                 <?php endif; ?>
-                                <?php if( get_field('contact_detail_email') ): ?>
+                                <?php if( get_field('contact_email') ): ?>
                                     <div class="detail detail-half" data-cue="fadeIn" data-duration="1000" data-delay="800">
-                                        <img src="<?php the_field('contact_detail_email_icon'); ?>" class="icon" alt="email address" >
-                                        <a href="#" class="email clickable"><?php the_field('contact_detail_email'); ?></a>
+                                        <img src="<?php the_field('contact_email_icon'); ?>" class="icon" alt="email address" >
+                                        <a href="#" class="email clickable"><?php the_field('contact_email'); ?></a>
                                     </div>
                                 <?php endif; ?>
                             </div>

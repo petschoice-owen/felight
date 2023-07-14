@@ -214,7 +214,6 @@ main {
         border-bottom-style: solid;
     }
 }
-
 .border-color-white {
     border-color: #fff;
 }
@@ -243,7 +242,19 @@ main {
 
 // br or white space height
 br, p:empty {
-    display: block;
     content: "";
+    display: block;
     padding-top: 15px;
+}
+
+
+// <body> background color
+body {
+    background-color: $burgundy;
+}
+
+// reCaptcha badge
+.grecaptcha-badge {
+    z-index: 10;
+    display: none;
 }
