@@ -41,6 +41,7 @@
                     width: 45px;
                     height: 45px;
                     margin-left: auto;
+                    padding: 5px;
                     font-family: $font-soleil-book;
                     line-height: 1;
                     font-size: 16px;
@@ -65,6 +66,20 @@
                         &-yellow {
                             background-color: $yellow;
                         }
+                    }
+
+                    &.large {
+                        font-size: 16px;
+                    }
+
+                    &.medium {
+                        font-size: 12px;
+                        line-height: 14px;
+                    }
+
+                    &.small {
+                        font-size: 10px;
+                        line-height: 12px;
                     }
                 }
             }

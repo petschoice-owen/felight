@@ -36,7 +36,7 @@ get_header( 'shop' ); ?>
                                 <div class="background-white background-color"></div>
                                 <?php if( get_field('product_size_variation') == 'show' ): ?>
                                     <div class="product-variation">
-                                        <span class="background-<?php the_field('product_size_variation_background_color'); ?>"><?php the_field('product_size_variation_text'); ?></span>
+                                        <span class="background-<?php the_field('product_size_variation_background_color'); ?> <?php echo wp_kses_post( get_field('product_size_variation_font_size') ); ?>"><?php the_field('product_size_variation_text'); ?></span>
                                     </div>
                                 <?php endif; ?>
                                 <div class="swiper-wrapper">
