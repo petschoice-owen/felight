@@ -22,6 +22,7 @@
     border-radius: 50%;
     border: 1px solid $burgundy;
     transition: .25s ease-in-out all;
+    pointer-events: none;
 
     &:hover {
         color: #fff;

@@ -97,52 +97,67 @@ get_header( 'shop' ); ?>
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist" data-cues="fadeInUp" data-duration="500" data-delay="200">
                                 <?php if ( get_field('product_tabs_tab_name_1') || get_field('product_tabs_tab_content_1') ): ?>
-                                    <button class="nav-link" id="nav_one" data-bs-toggle="tab" data-bs-target="#tab_one" type="button" role="tab" aria-controls="tab_one" aria-selected="false"><?php the_field('product_tabs_tab_name_1'); ?></button>
+                                    <?php if( get_field('product_tabs_visibility_1') == 'show' ) { ?> 
+                                        <button class="nav-link" id="nav_one" data-bs-toggle="tab" data-bs-target="#tab_one" type="button" role="tab" aria-controls="tab_one" aria-selected="false"><?php the_field('product_tabs_tab_name_1'); ?></button>
+                                    <?php } ?>
                                 <?php endif; ?>
                                 <?php if ( get_field('product_tabs_tab_name_2') || get_field('product_tabs_tab_content_2') ): ?>
-                                    <button class="nav-link" id="nav_two" data-bs-toggle="tab" data-bs-target="#tab_two" type="button" role="tab" aria-controls="tab_two" aria-selected="false"><?php the_field('product_tabs_tab_name_2'); ?></button>
+                                    <?php if( get_field('product_tabs_visibility_2') == 'show' ) { ?> 
+                                        <button class="nav-link" id="nav_two" data-bs-toggle="tab" data-bs-target="#tab_two" type="button" role="tab" aria-controls="tab_two" aria-selected="false"><?php the_field('product_tabs_tab_name_2'); ?></button>
+                                    <?php } ?>
                                 <?php endif; ?>
                                 <?php if ( get_field('product_tabs_tab_name_3') || get_field('product_tabs_tab_content_3') ): ?>
-                                    <button class="nav-link" id="nav_three" data-bs-toggle="tab" data-bs-target="#tab_three" type="button" role="tab" aria-controls="tab_three" aria-selected="false"><?php the_field('product_tabs_tab_name_3'); ?></button>
+                                    <?php if( get_field('product_tabs_visibility_3') == 'show' ) { ?> 
+                                        <button class="nav-link" id="nav_three" data-bs-toggle="tab" data-bs-target="#tab_three" type="button" role="tab" aria-controls="tab_three" aria-selected="false"><?php the_field('product_tabs_tab_name_3'); ?></button>
+                                    <?php } ?>
                                 <?php endif; ?>
                                 <?php if ( get_field('product_tabs_tab_name_4') || get_field('product_tabs_tab_content_4') ): ?>
-                                    <button class="nav-link" id="nav_four" data-bs-toggle="tab" data-bs-target="#tab_four" type="button" role="tab" aria-controls="tab_four" aria-selected="false"><?php the_field('product_tabs_tab_name_4'); ?></button>
+                                    <?php if( get_field('product_tabs_visibility_4') == 'show' ) { ?> 
+                                        <button class="nav-link" id="nav_four" data-bs-toggle="tab" data-bs-target="#tab_four" type="button" role="tab" aria-controls="tab_four" aria-selected="false"><?php the_field('product_tabs_tab_name_4'); ?></button>
+                                    <?php } ?>
                                 <?php endif; ?>
                                 <?php if ( get_field('product_tabs_tab_name_5') || get_field('product_tabs_tab_content_5') ): ?>
-                                    <button class="nav-link" id="nav_five" data-bs-toggle="tab" data-bs-target="#tab_five" type="button" role="tab" aria-controls="tab_five" aria-selected="false"><?php the_field('product_tabs_tab_name_5'); ?></button>
+                                    <?php if( get_field('product_tabs_visibility_5') == 'show' ) { ?> 
+                                        <button class="nav-link" id="nav_five" data-bs-toggle="tab" data-bs-target="#tab_five" type="button" role="tab" aria-controls="tab_five" aria-selected="false"><?php the_field('product_tabs_tab_name_5'); ?></button>
+                                    <?php } ?>
                                 <?php endif; ?>
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent" data-cue="fadeIn" data-duration="1000" data-delay="1000">
                             <?php if ( get_field('product_tabs_tab_name_1') || get_field('product_tabs_tab_content_1') ): ?>
-                                <div class="tab-pane fade" id="tab_one" role="tabpanel" aria-labelledby="nav_one"><!-- fade show active -->
-                                    <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_1'); ?></p>
+                                <?php if( get_field('product_tabs_visibility_1') == 'show' ) { ?> 
+                                    <div class="tab-pane fade" id="tab_one" role="tabpanel" aria-labelledby="nav_one"><!-- fade show active -->
+                                        <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_1'); ?></div>
                                     </div>
-                                </div>
+                                <?php } ?>
                             <?php endif; ?>
                             <?php if ( get_field('product_tabs_tab_name_2') || get_field('product_tabs_tab_content_2') ): ?>
-                                <div class="tab-pane fade" id="tab_two" role="tabpanel" aria-labelledby="nav_two">
-                                    <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_2'); ?></p>
+                                <?php if( get_field('product_tabs_visibility_2') == 'show' ) { ?> 
+                                    <div class="tab-pane fade" id="tab_two" role="tabpanel" aria-labelledby="nav_two">
+                                        <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_2'); ?></div>
                                     </div>
-                                </div>
+                                <?php } ?>
                             <?php endif; ?>
                             <?php if ( get_field('product_tabs_tab_name_3') || get_field('product_tabs_tab_content_3') ): ?>
-                                <div class="tab-pane fade" id="tab_three" role="tabpanel" aria-labelledby="nav_three">
-                                    <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_3'); ?></p>
+                                <?php if( get_field('product_tabs_visibility_3') == 'show' ) { ?> 
+                                    <div class="tab-pane fade" id="tab_three" role="tabpanel" aria-labelledby="nav_three">
+                                        <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_3'); ?></div>
                                     </div>
-                                </div>
+                                <?php } ?>
                             <?php endif; ?>
                             <?php if ( get_field('product_tabs_tab_name_4') || get_field('product_tabs_tab_content_4') ): ?>
-                                <div class="tab-pane fade" id="tab_four" role="tabpanel" aria-labelledby="nav_four">
-                                    <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_4'); ?></p>
+                                <?php if( get_field('product_tabs_visibility_4') == 'show' ) { ?> 
+                                    <div class="tab-pane fade" id="tab_four" role="tabpanel" aria-labelledby="nav_four">
+                                        <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_4'); ?></div>
                                     </div>
-                                </div>
+                                <?php } ?>
                             <?php endif; ?>
                             <?php if ( get_field('product_tabs_tab_name_5') || get_field('product_tabs_tab_content_5') ): ?>
-                                <div class="tab-pane fade" id="tab_five" role="tabpanel" aria-labelledby="nav_five">
-                                    <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_5'); ?></p>
+                                <?php if( get_field('product_tabs_visibility_5') == 'show' ) { ?> 
+                                    <div class="tab-pane fade" id="tab_five" role="tabpanel" aria-labelledby="nav_five">
+                                        <div class="tab-content-wrapper"><?php the_field('product_tabs_tab_content_5'); ?></div>
                                     </div>
-                                </div>
+                                <?php } ?>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -216,61 +231,25 @@ get_header( 'shop' ); ?>
                         </h2>
                     </div>
                     <div class="product-items" data-cues="fadeIn" data-duration="1000" data-delay="200">
-                        <?php
-                            $productCategoryLitters = get_field('product_suggestion_category_litters');
-                            if( $productCategoryLitters ): ?>
-                                <div class="product-item">
-                                    <div class="product-wrapper product-stars product-stars-1">
-                                        <div class="product-background background-white"></div>
-                                        <a href="<?php echo esc_url( get_permalink( $productCategoryLitters[0]->ID ) ); ?>" class="product-image">
-                                            <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $productCategoryLitters[0]->ID ) ); ?>" alt="product" />
-                                        </a>
-                                        <h4 class="product-name">
-                                            <a href="<?php echo esc_url( get_permalink( $productCategoryLitters[0]->ID ) ); ?>"><?php echo esc_html( $productCategoryLitters[0]->post_title ); ?></a>
-                                        </h4>
-                                        <div class="product-button">
-                                            <a href="<?php echo esc_url( get_permalink( $productCategoryLitters[0]->ID ) ); ?>" class="button btn-burgundy">Find Out More</a>
+                        <?php 
+                            $productSuggestions = get_field('product_suggestion_list');
+                            if( $productSuggestions ): ?>
+                                <?php foreach( $productSuggestions as $productSuggestion ): ?>
+                                    <div class="product-item">
+                                        <div class="product-wrapper product-stars product-stars-3">
+                                            <div class="product-background background-white"></div>
+                                            <a href="<?php echo get_permalink($productSuggestion->ID); ?>" class="product-image">
+                                                <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $productSuggestion->ID ) ); ?>" alt="product" />
+                                            </a>
+                                            <h4 class="product-name">
+                                                <a href="<?php echo get_permalink($productSuggestion->ID); ?>"><?php echo get_the_title($productSuggestion->ID); ?></a>
+                                            </h4>
+                                            <div class="product-button">
+                                                <a href="<?php echo get_permalink($productSuggestion->ID); ?>" class="button btn-burgundy">Find Out More</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            <?php endif; 
-                        ?>
-                        <?php
-                            $productCategoryAccessories = get_field('product_suggestion_category_accessories');
-                            if( $productCategoryAccessories ): ?>
-                                <div class="product-item">
-                                    <div class="product-wrapper product-stars product-stars-2">
-                                        <div class="product-background background-white"></div>
-                                        <a href="<?php echo esc_url( get_permalink( $productCategoryAccessories[0]->ID ) ); ?>" class="product-image">
-                                            <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $productCategoryAccessories[0]->ID ) ); ?>" alt="product" />
-                                        </a>
-                                        <h4 class="product-name">
-                                            <a href="<?php echo esc_url( get_permalink( $productCategoryAccessories[0]->ID ) ); ?>"><?php echo esc_html( $productCategoryAccessories[0]->post_title ); ?></a>
-                                        </h4>
-                                        <div class="product-button">
-                                            <a href="<?php echo esc_url( get_permalink( $productCategoryAccessories[0]->ID ) ); ?>" class="button btn-burgundy">Find Out More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endif; 
-                        ?>
-                        <?php
-                            $productCategoryFresheners = get_field('product_suggestion_category_fresheners');
-                            if( $productCategoryFresheners ): ?>
-                                <div class="product-item">
-                                    <div class="product-wrapper product-stars product-stars-3">
-                                        <div class="product-background background-white"></div>
-                                        <a href="<?php echo esc_url( get_permalink( $productCategoryFresheners[0]->ID ) ); ?>" class="product-image">
-                                            <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $productCategoryFresheners[0]->ID ) ); ?>" alt="product" />
-                                        </a>
-                                        <h4 class="product-name">
-                                            <a href="<?php echo esc_url( get_permalink( $productCategoryFresheners[0]->ID ) ); ?>"><?php echo esc_html( $productCategoryFresheners[0]->post_title ); ?></a>
-                                        </h4>
-                                        <div class="product-button">
-                                            <a href="<?php echo esc_url( get_permalink( $productCategoryFresheners[0]->ID ) ); ?>" class="button btn-burgundy">Find Out More</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             <?php endif; 
                         ?>
                     </div>
