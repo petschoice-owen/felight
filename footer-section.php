@@ -4,9 +4,21 @@
             <?php
                 if( (get_field('social_media_facebook', 'option') == 'show') || (get_field('social_media_instagram', 'option') == 'show') || (get_field('social_media_twitter', 'option') == 'show') ) { ?>
                     <div class="images">
-                        <div class="logo-holder">
-                            <img src="<?php the_field('theme_footer_logo', 'option'); ?>" alt="logo" />
-                        </div>
+                        <?php if( have_rows('theme_footer_logos', 'option') ): ?>
+                            <div class="logo-holder">
+                                <?php while( have_rows('theme_footer_logos', 'option') ): the_row(); ?>
+                                    <?php if( get_sub_field('add_link') == 'yes' ): ?>
+                                        <a href="<?php echo get_sub_field('image_url', 'option'); ?>" class="logo-link" target="_blank">
+                                            <img src="<?php echo get_sub_field('image', 'option'); ?>" alt="<?php echo get_sub_field('image_alt', 'option'); ?>" />
+                                        </a>
+                                    <?php else: ?>
+                                        <a href="#" class="logo-link no-link">
+                                            <img src="<?php echo get_sub_field('image', 'option'); ?>" alt="logo" />
+                                        </a>
+                                    <?php endif; ?>
+                                <?php endwhile; ?>
+                            </div>
+                        <?php endif; ?>
                         <ul class="socials">
                             <?php 
                                 if( get_field('social_media_facebook', 'option') == 'show' ) { ?>

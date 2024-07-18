@@ -49,10 +49,27 @@
     .logo-holder {
         display: flex;
         justify-content: center;
+        align-items: center;
         padding-right: 30px;
     
         img {
             max-width: 120px;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            outline: none;
+
+            &.no-link {
+                pointer-events: none;
+            }
+
+            & + a {
+                margin-left: 20px;
+            }
         }
     }
 
