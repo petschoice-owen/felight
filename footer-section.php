@@ -1,5 +1,8 @@
     <div class="footer-section" data-cue="fadeIn" data-duration="1000" data-delay="200">
-        <img src="<?php the_field('theme_footer_background_image', 'option'); ?>" class="footer-background" alt="" />
+        <?php if( get_field('theme_footer_image_award', 'option') ): ?>
+            <img src="<?php echo get_field('theme_footer_image_award', 'option'); ?>" class="footer-award footer-award-desktop" alt="Household Goods Brand of the Year - 2024 Finalist" />
+        <?php endif; ?>
+        <img src="<?php echo get_field('theme_footer_background_image', 'option'); ?>" class="footer-background" alt="Felight" />
         <div class="container">
             <?php
                 if( (get_field('social_media_facebook', 'option') == 'show') || (get_field('social_media_instagram', 'option') == 'show') || (get_field('social_media_twitter', 'option') == 'show') ) { ?>
@@ -17,6 +20,11 @@
                                         </a>
                                     <?php endif; ?>
                                 <?php endwhile; ?>
+                                <?php if( get_field('theme_footer_image_award', 'option') ): ?>
+                                    <a href="#" class="award-image-link logo-link no-link">
+                                        <img src="<?php echo get_field('theme_footer_image_award', 'option'); ?>" class="award-image" alt="Household Goods Brand of the Year - 2024 Finalist" />
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
                         <ul class="socials">

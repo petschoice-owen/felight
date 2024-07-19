@@ -71,6 +71,10 @@
                 margin-left: 20px;
             }
         }
+
+        .award-image-link {
+            display: none;
+        }
     }
 
     .socials {
@@ -162,6 +166,31 @@
         color: #fff;
         transition: .1s ease-in-out all;
         text-align: center;
+    }
+
+    .footer-award {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    @media (max-width: 1024px) {
+        .footer-award {
+            display: none;
+        }
+
+        .logo-holder {
+            .award-image-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .award-image {
+            max-height: 100px;
+        }
     }
   
     @media (max-width: 991px) { 
