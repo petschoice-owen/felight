@@ -113,24 +113,24 @@ get_header( 'shop' ); ?>
                 </div>
             </div>
         </section>
-        <section class="product-listing product-listing-accessories background-<?php the_field('shop_accessories_background_color', 'option'); ?>" id="<?php if( get_field('shop_accessories_section_id', 'option') ) { the_field('shop_accessories_section_id', 'option'); } else { echo "accessories"; } ?>">
-            <?php if( get_field('shop_accessories_image_left', 'option') ): ?>
-                <img src="<?php the_field('shop_accessories_image_left', 'option'); ?>" class="image-listing image-left" data-cue="fadeInLeft" data-duration="500" data-delay="1000" alt="paw" />
+        <section class="product-listing product-listing-fresheners background-<?php the_field('shop_fresheners_background_color', 'option'); ?>" id="<?php if( get_field('shop_fresheners_section_id', 'option') ) { the_field('shop_fresheners_section_id', 'option'); } else { echo "fresheners"; } ?>">
+            <?php if( get_field('shop_fresheners_image_left', 'option') ): ?>
+                <img src="<?php the_field('shop_fresheners_image_left', 'option'); ?>" class="image-listing image-left" data-cue="fadeInLeft" data-duration="500" data-delay="1000" alt="paw" />
             <?php endif; ?>
-            <?php if( get_field('shop_accessories_image_right', 'option') ): ?>
-                <img src="<?php the_field('shop_accessories_image_right', 'option'); ?>" class="image-listing image-right" data-cue="fadeInRight" data-duration="500" data-delay="1000" alt="cat litter" />
+            <?php if( get_field('shop_fresheners_image_right', 'option') ): ?>
+                <img src="<?php the_field('shop_fresheners_image_right', 'option'); ?>" class="image-listing image-right" data-cue="fadeInRight" data-duration="500" data-delay="1000" alt="cat litter" />
             <?php endif; ?>
             <div class="container">
                 <div class="section-text">
-                    <h2 class="heading-underlined line-<?php the_field('shop_accessories_heading_underline_color', 'option'); ?>" data-cue="fadeIn" data-duration="1000">
-                        <?php if( have_rows('shop_accessories_heading', 'option') ): ?>
-                            <?php while( have_rows('shop_accessories_heading', 'option') ): the_row(); ?>
+                    <h2 class="heading-underlined line-<?php the_field('shop_fresheners_heading_underline_color', 'option'); ?>" data-cue="fadeIn" data-duration="1000">
+                        <?php if( have_rows('shop_fresheners_heading', 'option') ): ?>
+                            <?php while( have_rows('shop_fresheners_heading', 'option') ): the_row(); ?>
                                 <span class="heading-<?php the_sub_field('heading_color', 'option'); ?>"><?php the_sub_field('heading', 'option'); ?></span>
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </h2>
-                    <?php if( get_field('shop_accessories_subheading', 'option') ): ?>
-                        <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200"><?php the_field('shop_accessories_subheading', 'option'); ?></p>
+                    <?php if( get_field('shop_fresheners_subheading', 'option') ): ?>
+                        <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200"><?php the_field('shop_fresheners_subheading', 'option'); ?></p>
                     <?php endif; ?>
                 </div>
                 <div class="product-items" data-cues="fadeIn" data-duration="1000" data-delay="200">
@@ -138,7 +138,7 @@ get_header( 'shop' ); ?>
                         $args = array(
                             'post_type' => 'product',
                             'post_status' => 'publish',
-                            'product_cat' => 'accessories', 
+                            'product_cat' => 'fresheners', 
                             'posts_per_page' => -1, 
                             'orderby' => 'date', 
                             'order' => 'DESC',
@@ -171,24 +171,24 @@ get_header( 'shop' ); ?>
                 </div>
             </div>
         </section>
-        <section class="product-listing product-listing-fresheners background-<?php the_field('shop_fresheners_background_color', 'option'); ?>" id="<?php if( get_field('shop_fresheners_section_id', 'option') ) { the_field('shop_fresheners_section_id', 'option'); } else { echo "fresheners"; } ?>">
-            <?php if( get_field('shop_fresheners_image_left', 'option') ): ?>
-                <img src="<?php the_field('shop_fresheners_image_left', 'option'); ?>" class="image-listing image-left" data-cue="fadeInLeft" data-duration="500" data-delay="1000" alt="paw" />
+        <section class="product-listing product-listing-accessories background-<?php the_field('shop_accessories_background_color', 'option'); ?>" id="<?php if( get_field('shop_accessories_section_id', 'option') ) { the_field('shop_accessories_section_id', 'option'); } else { echo "accessories"; } ?>">
+            <?php if( get_field('shop_accessories_image_left', 'option') ): ?>
+                <img src="<?php the_field('shop_accessories_image_left', 'option'); ?>" class="image-listing image-left" data-cue="fadeInLeft" data-duration="500" data-delay="1000" alt="paw" />
             <?php endif; ?>
-            <?php if( get_field('shop_fresheners_image_right', 'option') ): ?>
-                <img src="<?php the_field('shop_fresheners_image_right', 'option'); ?>" class="image-listing image-right" data-cue="fadeInRight" data-duration="500" data-delay="1000" alt="cat litter" />
+            <?php if( get_field('shop_accessories_image_right', 'option') ): ?>
+                <img src="<?php the_field('shop_accessories_image_right', 'option'); ?>" class="image-listing image-right" data-cue="fadeInRight" data-duration="500" data-delay="1000" alt="cat litter" />
             <?php endif; ?>
             <div class="container">
                 <div class="section-text">
-                    <h2 class="heading-underlined line-<?php the_field('shop_fresheners_heading_underline_color', 'option'); ?>" data-cue="fadeIn" data-duration="1000">
-                        <?php if( have_rows('shop_fresheners_heading', 'option') ): ?>
-                            <?php while( have_rows('shop_fresheners_heading', 'option') ): the_row(); ?>
+                    <h2 class="heading-underlined line-<?php the_field('shop_accessories_heading_underline_color', 'option'); ?>" data-cue="fadeIn" data-duration="1000">
+                        <?php if( have_rows('shop_accessories_heading', 'option') ): ?>
+                            <?php while( have_rows('shop_accessories_heading', 'option') ): the_row(); ?>
                                 <span class="heading-<?php the_sub_field('heading_color', 'option'); ?>"><?php the_sub_field('heading', 'option'); ?></span>
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </h2>
-                    <?php if( get_field('shop_fresheners_subheading', 'option') ): ?>
-                        <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200"><?php the_field('shop_fresheners_subheading', 'option'); ?></p>
+                    <?php if( get_field('shop_accessories_subheading', 'option') ): ?>
+                        <p class="text-center" data-cue="fadeIn" data-duration="1000" data-delay="200"><?php the_field('shop_accessories_subheading', 'option'); ?></p>
                     <?php endif; ?>
                 </div>
                 <div class="product-items" data-cues="fadeIn" data-duration="1000" data-delay="200">
@@ -196,7 +196,7 @@ get_header( 'shop' ); ?>
                         $args = array(
                             'post_type' => 'product',
                             'post_status' => 'publish',
-                            'product_cat' => 'fresheners', 
+                            'product_cat' => 'accessories', 
                             'posts_per_page' => -1, 
                             'orderby' => 'date', 
                             'order' => 'DESC',
