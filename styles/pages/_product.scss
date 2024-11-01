@@ -13,7 +13,7 @@
         position: relative;
         padding: 100px 0;
         overflow: hidden;
-        background-color: $pink;
+        // background-color: $pink;
 
         .product {
             position: relative;
@@ -214,6 +214,25 @@
 
                 p:last-child:empty {
                     display: none;
+                }
+            }
+            
+            &-pink {
+                .nav-link {
+                    background-color: $burgundy;
+                    border-color: $pink;
+
+                    &.active {
+                        background-color: $pink;
+                    }
+                }
+
+                .tab-pane {
+                    border-color: $pink;
+
+                    &.active {
+                        background-color: $pink;
+                    }
                 }
             }
             
